@@ -17,7 +17,19 @@ typedef struct struct_persoana PERSOANA;
 
 int extragereAn (char cnp[])
 {
-    return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
+    if (cnp[0]-'0' == 5 || cnp[0]-'0' == 6)
+    {
+        /// e nascut dupa 2000;
+        return 2000 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
+    }
+    else
+    {
+        /// e nascut intre 1900 si 1999;
+        return 1900 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
+    }
+
+
+    //return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
 }
 int extragereLuna (char cnp[])
 {
