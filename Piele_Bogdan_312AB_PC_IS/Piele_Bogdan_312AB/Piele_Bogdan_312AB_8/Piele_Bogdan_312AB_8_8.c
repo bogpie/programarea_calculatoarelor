@@ -20,6 +20,7 @@ int extragereAn (char cnp[])
     if (cnp[0]-'0' == 5 || cnp[0]-'0' == 6)
     {
         /// e nascut dupa 2000;
+
         return 2000 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
     }
     else
