@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1572194870 source:/home/bogdan/Desktop/PC/5/1 nedenumit/main.c
+	<stdio.h>
+	<stdlib.h>
+
