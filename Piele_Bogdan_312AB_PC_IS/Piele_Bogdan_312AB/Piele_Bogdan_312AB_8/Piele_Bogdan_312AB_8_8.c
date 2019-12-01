@@ -21,11 +21,11 @@ int extragereAn (char cnp[])
 }
 int extragereLuna (char cnp[])
 {
-    return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[3] - '0' ) * 10 + (cnp[4] - '0');
+    return ( cnp[3] - '0' ) * 10 + (cnp[4] - '0');
 }
 int extragereZi (char cnp[])
 {
-    return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[5] - '0' ) * 10 + (cnp[6] - '0');
+    return ( cnp[5] - '0' ) * 10 + (cnp[6] - '0');
 }
 
 int comp_catalog (PERSOANA pers1,PERSOANA pers2)
