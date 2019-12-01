@@ -6,10 +6,14 @@
 
 struct sct_autor
 {
+    char nume[100];
+    char prenume[100];
+    char gen;
 };
 
 struct sct_carte
 {
+    char titlu[100];
     int an ;
     struct sct_autor autor;
 
