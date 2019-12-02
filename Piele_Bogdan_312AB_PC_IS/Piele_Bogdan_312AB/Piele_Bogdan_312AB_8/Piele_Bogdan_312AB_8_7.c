@@ -21,6 +21,7 @@ struct sct_carte
 typedef struct sct_carte CARTE;
 int fCartiAutor (char nume[],char prenume[],CARTE vCarti[],int nCarti,int afiseaza);
 void fAutorCuNrMaxCarti(CARTE vCarti[],int nCarti,int * adrMaxim);
+
 void fSortare(CARTE vCarti[],int nCarti,int (*comparare)(CARTE,CARTE));
 void fAfisare(CARTE vCarti[] , int nCarti);
 int compCrescTitlu (CARTE a,CARTE b);
