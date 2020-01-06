@@ -1,0 +1,3 @@
+cititi de la tastatura o matrice (maxim 5 x 5)
+copiati-o intr-un fisier binar
+afisati continutul fisierului binar
