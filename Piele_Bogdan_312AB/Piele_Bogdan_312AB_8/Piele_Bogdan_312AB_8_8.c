@@ -1,4 +1,4 @@
-///Piele_Bogdan_312AB_8_8
+//Piele_Bogdan_312AB_8_8
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,32 +13,19 @@ struct struct_persoana
 
 typedef struct struct_persoana PERSOANA;
 
-/// cnp -> *YYMMDD...
+/// 5 01 02 10 ******
 
 int extragereAn (char cnp[])
 {
-    if (cnp[0]-'0' == 5 || cnp[0]-'0' == 6)
-    {
-        /// e nascut dupa 2000;
-
-        return 2000 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
-    }
-    else
-    {
-        /// e nascut intre 1900 si 1999;
-        return 1900 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
-    }
-
-
-    //return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
+    return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[1] - '0' ) * 10 + (cnp[2] - '0');
 }
 int extragereLuna (char cnp[])
 {
-    return ( cnp[3] - '0' ) * 10 + (cnp[4] - '0');
+    return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[3] - '0' ) * 10 + (cnp[4] - '0');
 }
 int extragereZi (char cnp[])
 {
-    return ( cnp[5] - '0' ) * 10 + (cnp[6] - '0');
+    return 1900 + (cnp[0]-'0' == 5 || cnp[0]-'0' == 6) * 100 + ( cnp[5] - '0' ) * 10 + (cnp[6] - '0');
 }
 
 int comp_catalog (PERSOANA pers1,PERSOANA pers2)
@@ -101,6 +88,9 @@ void fSortare (PERSOANA vPers[],int nPers,int (*comp)(PERSOANA,PERSOANA))
                 ordonat = 0;
             }
         }
+//
+//        for (int i=0;i<nPers-1;++i) printf ("%s ",vPers[i].cnp);
+//        printf ("/n");
     }
 }
 
@@ -125,6 +115,7 @@ int main()
     fSortare(vPers,nPers,comp_catalog);
     fAfisare (vPers,nPers);
 
+    printf ("%d",comp_catalog(vPers[0],vPers[1]) );
 
     return 0;
 }
