@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define NSTUDENTI 100
+#define LGNUME 40
+
+struct student
+{
+    char nume[40];
+    char sex;
+    float nota;
+};
+
+typedef struct student STUDENT;
+
+char* fExista(char nume[])
+{
+    FILE *binar;
+    fopen("binar.dat","rb");
+    char *ptr = malloc(sizeof(char*) * 8);
+    char str[10];
+    int n;
+    fread(&n,sizeof(n),1,binar);
+    printf("%d",n);
+    STUDENT v[NSTUDENTI];
+    fread(v,sizeof(STUDENT),n,binar);
+
+    exit(1);
+
+    for (int i=0;i<n;++i)
+    {
+        if ( strcmp(v[i].nume,nume) == 0 )
+        {
+            strcpy(ptr,"Exista");
+
+            return ptr;
+        }
+    }
+    strcpy(ptr,"Nu exista");
+    fclose(binar);
+    return ptr;
+}
+
+void fInit(FILE *binar)
+{
+    STUDENT student;
+    binar = fopen("binar.dat","wb");
+
+
+    if (binar==NULL)
+    {
+        printf ("nu a putut fi creat");
+        exit(1);
+    }
+    int n;
+    scanf("%d",&n);
+    STUDENT v[NSTUDENTI];
+
+    fwrite(&n,sizeof(n),1,binar);
+
+
+    for (int i=0;i<n;++i)
+    {
+        printf("Cititi numele:\n");
+        fflush(stdin);
+        gets(v[i].nume);
+
+        printf("Cititi sexul si nota:\n");
+        fflush(stdin);
+        scanf ("%c%f",&v[i].sex,&v[i].nota);
+
+    }
+    fwrite(v,sizeof(STUDENT),n,binar);
+
+    fclose(binar);
+}
+
+int main ()
+{
+    FILE *binar;
+    fInit(binar);
+
+    char strExista[10],str1[LGNUME],str2[LGNUME];
+
+    char *ptr1 = malloc( sizeof(char*) * 8);
+    char *ptr2 = malloc( sizeof(char*) * 8);
+
+    strcpy(str1,"Alpha");
+    strcpy(str2,"Omega");
+
+    ptr1 = fExista(str1);
+    ptr2 = fExista(str2);
+
+
+
+    printf ("%s : %s\n",str1,ptr1);
+    printf ("%s : %s\n",str1,ptr2);
+
+
+
+
+    return 0;
+}

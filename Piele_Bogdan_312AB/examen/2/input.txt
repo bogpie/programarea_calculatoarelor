@@ -1,0 +1,9 @@
+4
+Alpha Beta
+7 2 3
+Epsilon Fi
+7 5 6
+Charlie Delta
+7 8 9
+Omega Csi
+1 8 9

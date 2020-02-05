@@ -15,7 +15,7 @@ int main()
 {
     FILE *fisier;
     fisier = fopen("fisierBinarStruct.dat","rb");
-    if (!fisier)
+    if (fisier!=NULL)
     {
         printf ("fisierul nu a putut fi creat");
         exit (1);

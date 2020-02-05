@@ -1,0 +1,13 @@
+4
+Alpha Beta
+M
+9.7
+Charlie Delta
+M
+9.6
+Epsilon Fi
+F
+9.7
+Gama Csi
+F
+9.7
