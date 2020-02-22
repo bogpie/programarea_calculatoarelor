@@ -41,6 +41,7 @@ void fAfis(ELEMENT * start)
     {
         printf("%d %d %f\n",crt->id,crt->cant,crt->pret);
         crt=crt->urm;
+        /// (*crt).urm
     }
 }
 

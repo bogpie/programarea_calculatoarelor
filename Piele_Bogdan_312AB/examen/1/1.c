@@ -17,7 +17,8 @@ void fTest()
     fread(&n,sizeof(n),1,binar);
     printf ("%d\n",n);
     STUDENT v[40];
-    fread(v,sizeof(STUDENT),n,binar);
+    fread(v,sizeof(v),1,binar);
+    //fread(v,sizeof(STUDENT),n,binar);
     int i;
     for (i=0;i<n;++i)
     {
